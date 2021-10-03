@@ -1,23 +1,39 @@
 // Assignment Code
+var passLength = document.getElementById("passLength");
+var passLengthNumber = document.getElementById("passLengthNumber")
+var uppercase = document.getElementById("upperCase");
+var numberChars = document.getElementById("numberChars");
+var specialChars = document.getElementById("specialChars");
+
+
 var generateBtn = document.querySelector("#generate");
 var cardBody = document.querySelector(".card-body");
-console.log(cardBody);
+
+;
+var passCriteriaDiv = document.getElementById("cta");
+var passCriteria = []
+
+passLength.addEventListener('input', syncCharacterAmount);
+passLengthNumber.addEventListener('input', syncCharacterAmount);
+
+function syncCharacterAmount (event) {
+  const value = event.target.value 
+  passLength.value = value;
+  passLengthNumber.value = value;
+};
 
 
 // generate password calls the user to action by asking for password criteria and using the information to generate the password
+var checkPassCriteria = function(passCriteriaDiv) {
+
+  
+  
+}
+
+
 var generatePassword = function() {
 
-  var passwordLength = prompt("Enter a number between 8 and 128 to define your password's length.", "8-128");
-    
-    if (passwordLength < 8 || passwordLength > 128 ) {
-      
-      alert("Invalid response. Enter a number between 8 and 128 to define your password's length." );
-      
-      generatePassword();
-    } if (passwordLength === null) {
-      
-    }
-    console.dir(window.prompt);
+  
 
 };
 
@@ -28,13 +44,15 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+  checkPassCriteria();
+  
 }
 
 
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
 
 
 

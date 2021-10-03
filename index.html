@@ -24,17 +24,23 @@
             aria-label="Generated Password"
           ></textarea>
           <article class="cta">
+            <div>
             <label for="passLength">Password Length</label>
-            <input type="number" class="passLength" id="passLength">
-
+            <input type="range" id="passLength" min="8" max="128" value="12">
+            <input class="number-input" type="number" class="passLength" id="passLengthNumber" min="8" max="128" value="12">
+            </div>
+            <div>
             <label for="upperCase">Uppercase Characters</label>
             <input type="checkbox" class="upperCase" id="upperCase">
-            
+            </div>
+            <div>
             <label for="numberChars">Include Numbers</label>
             <input type="checkbox" class="numberChars" id="numberChars">
-
+            </div>
+            <div>
             <label for="specialChars">Special Characters</label>
             <input type="checkbox" class="specialChars" id="specialChars">
+            </div>
           </article>
         </div>
         <div class="card-footer">
