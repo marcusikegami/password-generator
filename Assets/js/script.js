@@ -1,4 +1,4 @@
-// Assignment Code
+// assign variable names to html element IDs
 var passLength = document.getElementById("passLength");
 var passLengthNumber = document.getElementById("passLengthNumber")
 var upperCase = document.getElementById("upperCase");
@@ -6,7 +6,7 @@ var numberChars = document.getElementById("numberChars");
 var specialChars = document.getElementById("specialChars");
 var passwordDisplay = document.getElementById('password');
 
-
+// assigning ASCII character codesets to variables to later use with String.fromCharCode()
 var LOWERCASE_CODES = arrayLowToHigh(97,122);
 var UPPERASE_CODES = arrayLowToHigh(65,90);
 var NUMBER_CODES = arrayLowToHigh(48,57);
@@ -18,7 +18,7 @@ var generateBtn = document.querySelector("#generate");
 var cardBody = document.querySelector(".card-body");
 var form = document.getElementById("wrapper");
 
-
+//Syncing the password length range input with the number input
 passLength.addEventListener('input', syncCharacterAmount);
 passLengthNumber.addEventListener('input', syncCharacterAmount);
 
@@ -34,6 +34,7 @@ generateBtn.addEventListener("click", event => {
 
   passwordDisplay.innerText = password
 });
+// generatePassword this function will iterate through i until the passlengthNumber is equal to i and push the current character into the array. the array will be sent to be used by the generate button
 // this function was written using the open-source code  from webdevsimplified on YouTube as a reference https://www.youtube.com/watch?v=iKo9pDKKHnc
 function generatePassword(passLengthNumber, upperCase, numberChars, specialChars) {
  let characterCodes = LOWERCASE_CODES
@@ -48,6 +49,8 @@ function generatePassword(passLengthNumber, upperCase, numberChars, specialChars
   return passwordCharacters.join('')
 };
 
+//this function orders the ASCII characters numerically from each codeset from low to high to be used
+
 function arrayLowToHigh(low, high) {
   const array = []
   for(let i = low; i <= high; i++) {
@@ -56,7 +59,7 @@ function arrayLowToHigh(low, high) {
   return array
 };
 
-
+// syncCharacterAmount makes the value of the range slider and the number input to automatically equalize
 function syncCharacterAmount (event) {
   const value = event.target.value 
   passLength.value = value;
