@@ -23,7 +23,7 @@
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
-          <article class="cta">
+          <form class="cta">
             <div>
             <label for="passLength">Password Length</label>
             <input type="range" id="passLength" min="8" max="128" value="12">
@@ -41,10 +41,10 @@
             <label for="specialChars">Special Characters</label>
             <input type="checkbox" class="specialChars" id="specialChars">
             </div>
-          </article>
+          </form>
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+          <button type="submit" id="generate" class="btn">Generate Password</button>
         </div>
       </div>
     </div>
