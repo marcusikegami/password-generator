@@ -25,7 +25,14 @@ passLengthNumber.addEventListener('input', syncCharacterAmount);
 generateBtn.addEventListener("click", event => {
   event.preventDefault()
 
-  const passLengthAmount = passLengthNumber.value
+  var passLengthAmount = passLengthNumber.value
+    if (passLengthAmount > 128) {
+      passLengthAmount = 128;
+      passLengthNumber.value = 128;
+    } else if (passLengthAmount < 8) {
+      passLengthAmount = 8;
+      passLengthNumber.value = 8;
+    };
   const useUpperCase = upperCase.checked
   const useNumberChars = numberChars.checked
   const useSpecialChars = specialChars.checked
